@@ -2,11 +2,11 @@
 const http=require("http");
 const fs=require("fs");
 const server=http.createServer((req,res)=>{
-    if(req.url=="/get"){
-        // fs.readFile(`${__dirname}/data.json`,"utf-8",(err,data)=>{
-        //     res.end(data);
-        // })
-        res.end("welcome");
+    if(req.url=="/getdata"){
+        fs.readFile(`${__dirname}/Data/finaldata.json`,"utf-8",(err,data)=>{
+            res.end(data);
+        })
+        // res.end("welcome");
     }
     res.end("hi");
 }).listen(8000);
